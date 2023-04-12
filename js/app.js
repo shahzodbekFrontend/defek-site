@@ -36,9 +36,9 @@ document.getElementById("root").innerHTML = categories.map((item) => {
                 </div>
                 <div class="bottom">
                     <p>${title}</p>
-                    <h2>$${price}.99</h2>
-                    <button onclick='addtocart("+(i++)+")'>Add To Cart</button>
-                </div>
+                    <h2>$${price}.99</h2>` +                   
+                    "<button onclick='addtocart("+(i++)+")'>Add To Cart</button>"+
+                `</div>
             </div>`
     )
 }).join('');
@@ -58,9 +58,8 @@ function displaycart(a){
     document.getElementById("total").innerHTML = "$ " +0+".00";
     if(cart.length==0){
         cardItem.innerHTML = "Your carst is empty";
-    } 
-    else {
-        cardItem.innerHTML += cart.map((items) => {
+    } else {
+        cardItem.innerHTML = cart.map((items) => {
             var { image, title, price } = items;
             total = total + price;
             document.getElementById("total").innerHTML = "$ " + total + ".00";
